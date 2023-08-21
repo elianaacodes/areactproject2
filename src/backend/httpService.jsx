@@ -2,7 +2,7 @@ import axios from "axios";
 
 const authToken = localStorage.getItem("token");
 
-axios.defaults.baseURL = "http://127.0.0.1:5000";
+axios.defaults.baseURL = "https://library-app-gqbg.onrender.com/";
 axios.defaults.headers.common["x-access-token"] = `Bearer ${authToken}`;
 
 axios.interceptors.response.use(null, (error) => {
