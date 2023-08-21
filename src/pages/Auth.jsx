@@ -54,7 +54,7 @@ const Auth = () => {
         .then((data) => {
           console.log(data)
           localStorage.setItem("token", data.data.token);
-          setActiveForm("login");
+          window.location = "/";
         })
         .catch((err) => {
           let errorMessage = 'Error syncing user with backend';
@@ -76,7 +76,7 @@ const Auth = () => {
     createUserWithEmailAndPassword(auth, email, password).then(async (userCredential) => {
       setAlertMessage('User Created');
       setAlertType('info');
-      window.location = "/";
+      setActiveForm("login");
     }).catch((error) => {
       // Handle login error
       setAlertType('error');
